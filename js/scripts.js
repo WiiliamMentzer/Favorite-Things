@@ -1,12 +1,8 @@
 window.addEventListener("load", function() {
   const form = document.getElementById("FavoriteForm");
   form.addEventListener("submit", submitInput);
-});
 
-function submitInput(event) {
-  event.preventDefault();
-  favoriteInput();
-};
+});
 
 function favoriteInput() {
   const favoriteThing1 = document.getElementById("FavoriteThing1").value;
@@ -14,5 +10,14 @@ function favoriteInput() {
   const favoriteThing3 = document.getElementById("FavoriteThing3").value;
 
   let favoriteArray = [favoriteThing1, favoriteThing2, favoriteThing3];
-  console.log(favoriteArray);
-}
+
+  return favoriteArray;
+
+  
+};
+
+function submitInput(event) {
+  event.preventDefault();
+  favoriteArray = favoriteInput();
+
+};
